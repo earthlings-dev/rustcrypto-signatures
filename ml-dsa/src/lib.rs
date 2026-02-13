@@ -1228,7 +1228,7 @@ mod test {
             let kp = P::from_seed(&Array::default());
 
             let mut kp_debug = alloc::string::String::new();
-            write!(&mut kp_debug, "{:?}", kp).unwrap();
+            write!(&mut kp_debug, "{kp:?}").unwrap();
             assert!(kp_debug.contains("KeyPair"));
 
             let mut sk_debug = alloc::string::String::new();

@@ -234,7 +234,7 @@ mod tests {
         let fors = Shake128f::new_from_pk_seed(&pk_seed);
         let adrs = ForsTree::new(3, 5);
         let md = Array([3; 25]);
-        let sig = fors.fors_sign(&md, &sk_seed, &&adrs);
+        let sig = fors.fors_sign(&md, &sk_seed, &adrs);
 
         let expected = hex!(
             "2cac88fad4eeae791048fe07aa3544a9

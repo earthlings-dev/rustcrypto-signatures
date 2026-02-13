@@ -141,10 +141,9 @@ impl RecoveryId {
 
             if let Ok(vk) =
                 VerifyingKey::recover_from_prehash_noverify(prehash, signature, recovery_id)
+                && verifying_key == &vk
             {
-                if verifying_key == &vk {
-                    return Ok(recovery_id);
-                }
+                return Ok(recovery_id);
             }
         }
 

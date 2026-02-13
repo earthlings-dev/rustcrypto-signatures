@@ -14,24 +14,24 @@ repository = "https://github.com/RustCrypto/signatures"
 readme = "README.md"
 categories = ["cryptography", "no-std"]
 keywords = ["crypto", "curve25519", "ecc", "signature", "signing"]
-edition = "2024"
-rust-version = "1.85"
+edition.workspace = true
+rust-version.workspace = true
 
 [dependencies]
-signature = { version = "3.0.0-rc.10", default-features = false }
+signature = { workspace = true, default-features = false }
 
 # optional dependencies
-pkcs8 = { version = "0.11.0-rc.10", optional = true }
-serde = { version = "1", optional = true, default-features = false }
-serde_bytes = { version = "0.11", optional = true, default-features = false }
-zeroize = { version = "1", optional = true, default-features = false }
-zerocopy = { version = "0.8", optional = true, features = ["derive"] }
+pkcs8 = { workspace = true, optional = true, default-features = true }
+serde = { workspace = true, optional = true, default-features = false }
+serde_bytes = { workspace = true, optional = true, default-features = false }
+zeroize = { workspace = true, optional = true, default-features = false }
+zerocopy = { workspace = true, optional = true, features = ["derive"] }
 
 [dev-dependencies]
 #ed25519-dalek = { version = "2", features = ["rand_core"] }
-hex-literal = "1"
+hex-literal = { workspace = true }
 #ring-compat = { version = "0.8", default-features = false, features = ["signature"] }
-rand_core = { version = "0.9", features = ["std"] }
+rand_core = { workspace = true }
 
 [features]
 default = ["alloc"]

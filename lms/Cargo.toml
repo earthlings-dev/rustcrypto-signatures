@@ -2,26 +2,26 @@
 name = "lms-signature"
 description = "Pure Rust implementation of Leighton-Micali Hash-Based Signatures (RFC 8554)"
 version = "0.1.0-rc.2"
-edition = "2024"
+edition.workspace = true
 license = "Apache-2.0 OR MIT"
 homepage = "https://github.com/RustCrypto/signatures/tree/master/lms"
 repository = "https://github.com/RustCrypto/signatures"
 readme = "README.md"
-rust-version = "1.85"
+rust-version.workspace = true
 categories = ["cryptography"]
 keywords = ["crypto", "signature"]
 
 [dependencies]
-digest = "0.11.0-rc.11"
-hybrid-array = { version = "0.4", features = ["extra-sizes", "zeroize"] }
-getrandom = { version = "0.4", features = ["sys_rng"] }
-sha2 = "0.11.0-rc.5"
-static_assertions = "1.1"
-rand_core = "0.10"
-signature = { version = "3.0.0-rc.10", features = ["alloc", "digest", "rand_core"] }
-typenum = { version = "1.17", features = ["const-generics"] }
-zeroize = "1.8"
+digest = { workspace = true, default-features = true }
+hybrid-array = { workspace = true, features = ["extra-sizes", "zeroize"] }
+getrandom = { workspace = true, features = ["sys_rng"] }
+sha2 = { workspace = true, default-features = true }
+static_assertions = { workspace = true }
+rand_core = { workspace = true }
+signature = { workspace = true, default-features = true, features = ["alloc", "digest", "rand_core"] }
+typenum = { workspace = true, features = ["const-generics"] }
+zeroize = { workspace = true, default-features = true }
 
 [dev-dependencies]
-hex = "0.4"
-hex-literal = "1"
+hex = { workspace = true }
+hex-literal = { workspace = true }
