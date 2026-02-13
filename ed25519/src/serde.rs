@@ -1,6 +1,8 @@
 //! `serde` support.
 
-use crate::{Signature, SignatureBytes};
+use crate::Signature;
+#[cfg(feature = "serde_bytes")]
+use crate::SignatureBytes;
 use ::serde::{Deserialize, Serialize, de, ser};
 use core::fmt;
 
